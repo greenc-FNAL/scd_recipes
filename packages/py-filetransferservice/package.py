@@ -9,8 +9,7 @@ from spack import *
 class PyFiletransferservice(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
-    # FIXME: Add a proper url for your package's homepage here.
-    homepage = "http://www.example.com"
+    homepage = "http://cdcvs.fnal.gov/redmine/projects/filetransferservice"
     url      = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/filetransferservice.v6_3_5.tar"
 
     version(
@@ -22,4 +21,5 @@ class PyFiletransferservice(PythonPackage):
     depends_on('py-pyopenssl',        type=('build', 'run'))
     depends_on('py-jinja2',           type=('build', 'run'))
     depends_on('py-crcmod',           type=('build', 'run'))
-    depends_on('ifdhc',               type=('build', 'run'))
+    depends_on('py-sam-cp',           type='run')
+    depends_on('ifdhc cxxstd=default',type='run')
