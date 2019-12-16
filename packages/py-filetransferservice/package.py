@@ -22,3 +22,4 @@ class PyFiletransferservice(PythonPackage):
     depends_on('py-pyopenssl',        type=('build', 'run'))
     depends_on('py-jinja2',           type=('build', 'run'))
     depends_on('py-crcmod',           type=('build', 'run'))
+    depends_on('ifdhc',               type=('build', 'run'))
