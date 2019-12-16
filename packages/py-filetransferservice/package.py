@@ -16,8 +16,9 @@ class PyFiletransferservice(PythonPackage):
     version(
         '6_3_5', sha256='3ca8b2507d56b2a836cd8141c200a4618f9e22fd54d5478e69208bbfd0d21643')
 
+    depends_on('py-setuptools',       type='build')
     depends_on('py-twisted',          type=('build', 'run'))
-    depends_on('py-service_identity', type=('build', 'run'))
+    depends_on('py-service-identity', type=('build', 'run'))
     depends_on('py-pyopenssl',        type=('build', 'run'))
     depends_on('py-jinja2',           type=('build', 'run'))
     depends_on('py-crcmod',           type=('build', 'run'))

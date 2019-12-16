@@ -14,7 +14,8 @@ class PyServiceIdentity(PythonPackage):
 
     version('18.1.0', sha256='0858a54aabc5b459d1aafa8a518ed2081a285087f349fe3e55197989232e2e2d')
     
-    depends_on('py-atttrs@16.0.0:',    type=('build','run'))
+    depends_on('py-setuptools',        type='build')
+    depends_on('py-attrs@16.0.0:',    type=('build','run'))
     depends_on('py-pyasn1-modules',    type=('build','run'))
     depends_on('py-pyasn1',            type=('build','run'))
     depends_on('py-cryptography',      type=('build','run'))

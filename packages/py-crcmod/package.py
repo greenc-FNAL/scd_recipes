@@ -14,3 +14,5 @@ class PyCrcmod(PythonPackage):
 
     version(
         '1.7', sha256='dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e')
+
+    depends_on('py-setuptools',        type='build')
