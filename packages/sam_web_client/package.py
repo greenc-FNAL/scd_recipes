@@ -20,4 +20,9 @@ class SamWebClient (Package):
     depends_on('py-requests',type='run')
 
     def install(self, spec, prefix):
-        install_tree(self.stage.source_path, prefix.bin)
+        install_tree(self.stage.source_path, prefix)
+
+    def setup_environment(self, spack_env, run_env):
+        run_env.prepend_path('PATH', self.prefix.bin)
+        run_env.prepend_path('PYTHONPATH', self.prefix + '/python')
+

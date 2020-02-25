@@ -23,3 +23,7 @@ class PyPoms(PythonPackage):
     depends_on('py-requests',          type=('build', 'run'))
     depends_on('py-setuptools',        type=('build', 'run'))
     depends_on('py-sqlalchemy',        type=('build', 'run'))
+
+    def install(self, spec, prefix):
+        install_tree(self.stage.source_path, prefix)
+
