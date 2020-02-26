@@ -1,6 +1,6 @@
 from spack import *
 
-class PyPoms(PythonPackage):
+class Poms(PythonPackage):
     """Production Operations Management System"""
 
     # FIXME: Add a proper url for your package's homepage here.
