@@ -14,7 +14,7 @@ class Poms(PythonPackage):
 
     depends_on('python',               type=('build','run'))
     depends_on('py-cherrypy',          type=('build', 'run'))
-    depends_on('py-futures',           type=('build', 'run'))
+    #depends_on('py-futures',           type=('build', 'run'))
     depends_on('py-jinja2',            type=('build', 'run'))
     depends_on('py-more-itertools',    type=('build', 'run'))
     depends_on('py-prometheus-client', type=('build', 'run'))
