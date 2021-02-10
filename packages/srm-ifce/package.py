@@ -40,6 +40,7 @@ class SrmIfce(CMakePackage):
     depends_on('gsoap')
     depends_on('globus-toolkit')
     depends_on('pkgconfig', type='build')
+    depends_on('glib')
 
     def cmake_args(self):
         args = [

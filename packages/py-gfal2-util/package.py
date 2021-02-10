@@ -3,21 +3,45 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+# ----------------------------------------------------------------------------
+# If you submit this package back to Spack as a pull request,
+# please first remove this boilerplate and all FIXME comments.
+#
+# This is a template package file for Spack.  We've put "FIXME"
+# next to all the things you'll want to change. Once you've handled
+# them, you can save this file and test your package like this:
+#
+#     spack install py-gfal2-util
+#
+# You can edit this file again by typing:
+#
+#     spack edit py-gfal2-util
+#
+# See the Spack documentation for more information on packaging.
+# ----------------------------------------------------------------------------
 
 from spack import *
+
 
 class PyGfal2Util(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
-    # FIXME: Add a proper url for your package's homepage here.
-    homepage = "https://dmc.web.cern.ch/"
-    url      = "https://gitlab.cern.ch/dmc/gfal2-bindings/-/archive/v1.8.3/gfal2-util-v1.5.3.tar.gz"
+    homepage = "https://gitlab.cern.ch/dmc/"
+    url      = "https://gitlab.cern.ch/dmc/gfal2-util/-/archive/v1.3.0/gfal2-util-v1.3.0.tar.bz2"
 
     maintainers = ['marcmengel',]
 
-    version('1.5.3', sha256='803ed5dbcff8a59fe4fec30ab825535c28fa895b61b1ce5d36d850e80fc5b24a')
+    version('1.6.0-rc1', sha256='3c0b2df6761a1e439857cf9f1274cfb4762985b436da308fc03fe1b1231cfcf3')
+    version('1.6.0',     sha256='8c21d3fa824d3583a6c310e8abebbb611b53a754e49f046d28fedc308fb19fae')
+    version('1.5.4',     sha256='0d7e8fb88ce9b99b9b70c26770e50c28a1a8d80bf002ef2fe12b267283181494')
+    version('1.5.3',     sha256='1507f3aa201614319436fff2fdf821856f19a7ffd6c67260b8d8bbcafdf32228')
 
-    # depends_on('python@2.X:2.Y,3.Z:', type=('build', 'run'))
-    depends_on('py-setuptools', type='build')
+    depends_on('python', type=('build', 'run'))
+    # depends_on('py-setuptools', type='build')
     depends_on('gfal2-python',        type=('build', 'run'))
 
+    def build_args(self, spec, prefix):
+        # FIXME: Add arguments other than --prefix
+        # FIXME: If not needed delete this function
+        args = []
+        return args

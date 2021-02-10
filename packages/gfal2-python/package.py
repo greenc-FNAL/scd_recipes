@@ -24,6 +24,8 @@ class Gfal2Python(CMakePackage):
     depends_on('python')
     extends('python')
 
+    patch('find_package_boost.patch')
+
     def cmake_args(self):
-        args = ['-DSKIP_DOC=ON']
+        args = ['-DSKIP_DOC=ON',  '-DALT_PYTHON_LOCATION=%s' % self.spec['python'].prefix.bin ]
         return args

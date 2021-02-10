@@ -23,7 +23,7 @@
 from spack import *
 
 
-class CgsiGsoap(AutotoolsPackage):
+class CgsiGsoap(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "http://dmc.web.cern.ch/"
@@ -36,7 +36,5 @@ class CgsiGsoap(AutotoolsPackage):
     version('1.3.9',  sha256='2aede591e22be45b368cfe8fa979b2c8d3262c87e82db00d5622ae834027b8b4')
 
     depends_on('globus-toolkit')
-
-    def configure_args(self):
-        args = ['-DGLOBUS_PREFIX=%s' % self.spec['globus-toolkit'].prefix]
-        return args
+    depends_on('voms')
+    depends_on('gsoap')

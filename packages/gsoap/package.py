@@ -17,4 +17,16 @@ class Gsoap(AutotoolsPackage):
     version('2.8.111', sha256='f1670c7e3aeaa66bc5658539fbd162e5099f022666855ef2b2c2bac07fec4bd3')
 
     depends_on('openssl')
+    depends_on('pkgconfig')
+
+    def setup_dependent_environment(self, spack_env, run_env, dependent_spec):
+        spack_env.prepend_path("PKG_CONFIG_PATH", "%s/lib/ldconfig" % self.prefix)
+
+    def flag_handler(self, name, flags):
+        if not name in ['cflags','cxxflags','cppflags']:
+            return (flags, None, None)
+
+        flags.append(self.compiler.cc_pic_flag)
+
+        return (None, None, flags)
 
