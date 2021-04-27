@@ -19,7 +19,7 @@ class Gsoap(AutotoolsPackage):
         # the download link recently:
         # so we have curl ping that and then take where it sends you...
         fetch_first = "https://sourceforge.net/projects/gsoap2/files/gsoap_%s.zip/download" % version
-        os.system("curl --max-redirs 0 '%s'" % fetch_first)
+        os.system("curl --output /dev/null --silent --max-redirs 0 '%s'" % fetch_first)
         return "https://downloads.sourceforge.net/project/gsoap2/gsoap_%s.zip" % version
 
     maintainers = ['marc.mengel@gmail.com', ]
