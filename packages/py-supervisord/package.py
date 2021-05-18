@@ -23,3 +23,6 @@ class PySupervisord(PythonPackage):
     depends_on('py-meld3',      type=('build', 'run'), when="@:4.1.0")
     depends_on('py-pytest',     type='test')
     depends_on('py-pytest-cov', type='test')
+
+    def setup_run_environment(self, env):
+        env.prepend_path('PATH', self.prefix.bin)

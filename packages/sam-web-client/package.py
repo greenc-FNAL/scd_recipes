@@ -16,6 +16,11 @@ class SamWebClient (Package):
     version('3.0')
     #version('3.1')
 
+    def url_for_version(self, version):
+        url = 'https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/sam-web-client.v{0}.tbz2'
+        return url.format(version.underscored)
+
+
     depends_on('python', type=('build','run'))
     depends_on('py-requests',type='run')
 
