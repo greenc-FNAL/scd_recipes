@@ -12,6 +12,9 @@ class Poms(PythonPackage):
     version('4_1_0', 'c8682135a0d4eae8df00a29ececb6020')
     version('4_2_0', 'cf496f78f5e988684d32afa352b0c77b')
     version('4_2_1', sha256='baeae29169489dda9be0d5f7ebb9bd93dae2644088a4275a02ede4469d863c28')
+    version('4_2_0', 'cf496f78f5e988684d32afa352b0c77b')
+    version('4_3_0', sha256='063a6bac546183cb24fc1ba5228bb640176bc3e9591995a58d39c61aacd6053b')
+    version('develop', branch='develop', git='ssh://p-prod_mgmt_db@cdcvs.fnal.gov/cvs/projects/prod_mgmt_db')
 
     depends_on('python',               type=('build','run'))
     depends_on('py-cherrypy',          type=('build', 'run'))
