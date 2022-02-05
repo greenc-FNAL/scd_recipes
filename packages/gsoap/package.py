@@ -24,6 +24,7 @@ class Gsoap(AutotoolsPackage):
 
     maintainers = ['marc.mengel@gmail.com', ]
 
+    version('2.8.119', sha256='8997c43b599a2bfe4a788e303a5dd24bbf5992fd06d56f606ca680ca5b0070cf')
     version('2.8.114', sha256='aa70a999258100c170a3f8750c1f91318a477d440f6a28117f68bc1ded32327f')
     version('2.8.113', sha256='e73782b618303cf55ea6a45751b75ba96797a7a12967ed9d02e6d5761977e73a')
     version('2.8.112', sha256='05345312e0bb4d81c98ae63b97cff9eb097f38dafe09356189f9d8e235c54095')
