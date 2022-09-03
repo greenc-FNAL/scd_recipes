@@ -27,14 +27,17 @@ class PyPythonCrontab(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://gitlab.com/doctormo/python-crontab/"
-    url      = "https://pypi.io/packages/source/p/python-crontab/python-crontab-2.5.1.tar.gz"
+    url = "https://pypi.io/packages/source/p/python-crontab/python-crontab-2.5.1.tar.gz"
 
-    maintainers = ['marc.mengel@gmail.com']
+    maintainers = ["marc.mengel@gmail.com"]
 
-    version('2.5.1', sha256='4bbe7e720753a132ca4ca9d4094915f40e9d9dc8a807a4564007651018ce8c31')
+    version(
+        "2.5.1",
+        sha256="4bbe7e720753a132ca4ca9d4094915f40e9d9dc8a807a4564007651018ce8c31",
+    )
 
-    depends_on('python', type=('build', 'run'))
-    depends_on('py-setuptools', type='build')
+    depends_on("python", type=("build", "run"))
+    depends_on("py-setuptools", type="build")
 
     def build_args(self, spec, prefix):
         args = []

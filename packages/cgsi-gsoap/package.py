@@ -27,14 +27,25 @@ class CgsiGsoap(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "http://dmc.web.cern.ch/"
-    url      = "https://gitlab.cern.ch/dmc/cgsi-gsoap/-/archive/v1.3.11/cgsi-gsoap-v1.3.11.tar.gz"
+    url = "https://gitlab.cern.ch/dmc/cgsi-gsoap/-/archive/v1.3.11/cgsi-gsoap-v1.3.11.tar.gz"
 
-    maintainers = ['marc.mengel@gmail.com',]
+    maintainers = [
+        "marc.mengel@gmail.com",
+    ]
 
-    version('1.3.11', sha256='5fe3d8741f906dc77a13e61871d18bcf0a6deab6dd70fb0b0c977b4ef61ff924')
-    version('1.3.10', sha256='17222279fe26697bb45f168039e21c4324015545d6741038792cd9df746647f8')
-    version('1.3.9',  sha256='2aede591e22be45b368cfe8fa979b2c8d3262c87e82db00d5622ae834027b8b4')
+    version(
+        "1.3.11",
+        sha256="5fe3d8741f906dc77a13e61871d18bcf0a6deab6dd70fb0b0c977b4ef61ff924",
+    )
+    version(
+        "1.3.10",
+        sha256="17222279fe26697bb45f168039e21c4324015545d6741038792cd9df746647f8",
+    )
+    version(
+        "1.3.9",
+        sha256="2aede591e22be45b368cfe8fa979b2c8d3262c87e82db00d5622ae834027b8b4",
+    )
 
-    depends_on('globus-toolkit')
-    depends_on('voms')
-    depends_on('gsoap')
+    depends_on("globus-toolkit")
+    depends_on("voms")
+    depends_on("gsoap")
