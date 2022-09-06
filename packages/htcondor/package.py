@@ -125,3 +125,4 @@ class Htcondor(CMakePackage):
 
     def setup_environment(self, spack_env, run_env):
         run_env.prepend_path("PATH", self.prefix.bin)
+        run_env.prepend_path("PYTHONPATH", self.prefix.lib.python3)
