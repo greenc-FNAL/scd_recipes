@@ -28,14 +28,19 @@ class PyCvs2svn(PythonPackage):
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = ""
-    url      = "https://github.com/marcmengel/cvs2svn/archive/refs/tags/v2.4.0_pre.tar.gz"
+    url = "https://github.com/marcmengel/cvs2svn/archive/refs/tags/v2.4.0_pre.tar.gz"
 
-    version('2.4.0_pre', sha256='29ac8a3ab60d0eab231529297d9a83ac2fc7bed1cf152b720185f233a59b7d3d')
+    version(
+        "2.4.0_pre",
+        sha256="29ac8a3ab60d0eab231529297d9a83ac2fc7bed1cf152b720185f233a59b7d3d",
+    )
 
-    maintainers = ['marcmengel',]
+    maintainers = [
+        "marcmengel",
+    ]
 
-    depends_on('python@:3.0.0')
-    #depends_on('py-setuptools', type='build')
+    depends_on("python@:3.0.0")
+    # depends_on('py-setuptools', type='build')
 
     def build_args(self, spec, prefix):
         args = []
