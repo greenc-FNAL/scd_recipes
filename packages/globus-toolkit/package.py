@@ -74,7 +74,7 @@ class GlobusToolkit(AutotoolsPackage):
         f.write("all:\n\ninstall:\n\n")
         f.close()
 
-    @run_before("autoconf")
+    @run_before("autoreconf")
     def patch_configure(self):
         with working_dir(self.build_directory):
             os.system(
