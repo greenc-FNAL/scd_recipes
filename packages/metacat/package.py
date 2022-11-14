@@ -5,7 +5,7 @@
 
 from spack.package import *
 
-class PyMetacat(PythonPackage):
+class Metacat(PythonPackage):
     """"""
 
     homepage = "https://metacat.readthedocs.io/en/latest/index.html"
@@ -20,7 +20,11 @@ class PyMetacat(PythonPackage):
     depends_on("python@3.7:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
 
-    variant("client_only", default=True)
+    with when("@3.20.1:"):
+        variant("client_only", default=True)
+
+    with when("@:3.20.0"):
+        variant("client_only", default=False)
 
     depends_on("py-pyjwt", type=("build", "run"))
     depends_on("py-requests", type=("build", "run"))
@@ -28,9 +32,9 @@ class PyMetacat(PythonPackage):
     depends_on("py-pyyaml", type=("build", "run"), when="~client_only")
     depends_on("py-lark", type=("build", "run"), when="~client_only")
 
-    with when("~client_only"):
-        @run_before("install")
-        def use_setup_full(self):
-            rename("setup.py","setup_client_only.py")
-            rename("setup_full.py", "setup.py")
+    #@run_before("install")
+    #def use_setup_full(self):
+    #    with when("~client_only @3.20.1:"):
+    #        rename("setup.py","setup_client_only.py")
+    #        rename("setup_full.py", "setup.py")
 
