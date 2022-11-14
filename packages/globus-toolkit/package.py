@@ -80,8 +80,10 @@ class GlobusToolkit(AutotoolsPackage):
             os.system(
                 "find . -name Makefile.in -print | xargs perl -pi.bak -e 's{./config.status --recheck}{/dev/null};'"
             )
-            filter_file("libltdl\.la", "libltdl.so", "aclocal.m4")
-            filter_file("libltdl\.la", "libltdl.so", "configure")
+            if os.path.exists("aclocal.m4"):
+                filter_file("libltdl\.la", "libltdl.so", "aclocal.m4")
+            if os.path.exists("configure"):
+                filter_file("libltdl\.la", "libltdl.so", "configure")
 
     def configure_args(self):
         if os.path.exists(self.spec["libtool"].prefix.lib64):

@@ -20,6 +20,11 @@ class Htcondor(CMakePackage):
     ]
 
     version(
+        "main",
+        git="https://github.com/marcmengel/htcondor.git",
+        branch="main"
+    )
+    version(
         "9_0_16",
         sha256="c505c3e72c8dd7d6b30f7f7922ccdd20627b6dcf385b40b17c3022973d2852eb",
         preferred=True,
@@ -56,6 +61,7 @@ class Htcondor(CMakePackage):
     depends_on("krb5", type=("build", "run"))
     depends_on("munge", type=("build", "run"))
     depends_on("openldap", type=("build", "run"))
+    depends_on("sqlite", type=("build", "run"))
     depends_on("openssl", type=("build", "run"))
     depends_on("scitokens-cpp", type=("build", "run"))
     depends_on("tar@1.14:", type=("build", "run"))
@@ -83,15 +89,24 @@ class Htcondor(CMakePackage):
             "munge",
             "voms",
             "scitokens-cpp",
+            "sqlite",
         ]
         if name in ["cflags", "cxxflags", "cppflags"]:
+            # find our package headers
             for pkg in plist:
                 flags.append("-I{0}".format(self.spec[pkg].prefix.include))
-            return (None, flags, None)
-        if name == "ldlibs":
+            # silliness for condor_types.h(?), things that ought to have configured
+            flags.append("-DHAVE_LONG")
+            flags.append("-DSIZEOF_LONG=8")
+            flags.append("-DHAVE_STRCASESTR")
+            return (flags, None, None)
+        if name == "ldflags":
             for pkg in plist:
                 flags.append("-L{0}".format(self.spec[pkg].prefix.lib))
-            return (None, flags, None)
+            flags.append("-L/usr/lib64")
+            if "-L/usr/lib" in flags:
+                flags.remove("-L/usr/lib")
+            return (flags, None, None)
         return (flags, None, None)
 
     def cmake_args(self):
@@ -120,6 +135,8 @@ class Htcondor(CMakePackage):
             "-DPYTHON_BOOST_LIBRARY=boost_python{0}{1} -L{2}".format(
                 pymajor, pyminor, self.spec["python"].prefix.lib
             ),
+            "-DSQLITE3_LIB={0}".format(self.spec["sqlite"].libs[0]),
+            "-DHAVE_SQLITE3_H={0}".format(self.spec["sqlite"].prefix.include+'/sqlite3.h'),
         ]
         return args
 
