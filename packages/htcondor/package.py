@@ -15,44 +15,21 @@ class Htcondor(CMakePackage):
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers = [ "marcmengel" ]
 
-    version(
-        "main",
-        git="https://github.com/marcmengel/htcondor.git",
-        branch="main"
-    )
-    version(
-        "9_0_16",
-        sha256="c505c3e72c8dd7d6b30f7f7922ccdd20627b6dcf385b40b17c3022973d2852eb",
-        preferred=True,
-    )
-    version(
-        "9_11_0",
-        sha256="5309121ad9d0da42f77211456854bfad97bcb94a0ee001d18db04f8b61e48695",
-    )
-    version(
-        "9_10_1",
-        sha256="12bfec4b00cb148afbdc8bd63695507d0cc29d8b76696346adca48c04fa7e2c9",
-    )
-    version(
-        "9_10_0",
-        sha256="02d3f2d70ace2d40e7cde813b0bea24baa92bc4be6cb0b62bfc7168d24fb0117",
-    )
-    version(
-        "9_9_1",
-        sha256="fc58aa48c3b35d9ce54535946dc52a0d3232c728090c79209359d4b8e2171ae0",
-    )
-    version(
-        "9_9_0",
-        sha256="bf958c0687cc9c9fd524cd19f8014eb03e0d2949c9b8da3fe93b4bd25f16a741",
-    )
-    version(
-        "9_8_1",
-        sha256="9e51983043639661a09e0a6df9fdec47b568b55d6724ae0522ee096582420fea",
-    )
+    version( "main", git="https://github.com/marcmengel/htcondor.git", branch="main")
+    version( "9.0.16", sha256="c505c3e72c8dd7d6b30f7f7922ccdd20627b6dcf385b40b17c3022973d2852eb", preferred=True)
+    version( "9.11.0", sha256="5309121ad9d0da42f77211456854bfad97bcb94a0ee001d18db04f8b61e48695")
+    version( "9.10.1", sha256="12bfec4b00cb148afbdc8bd63695507d0cc29d8b76696346adca48c04fa7e2c9")
+    version( "9.10.0", sha256="02d3f2d70ace2d40e7cde813b0bea24baa92bc4be6cb0b62bfc7168d24fb0117")
+    version( "9.9.1", sha256="fc58aa48c3b35d9ce54535946dc52a0d3232c728090c79209359d4b8e2171ae0")
+    version( "9.9.0", sha256="bf958c0687cc9c9fd524cd19f8014eb03e0d2949c9b8da3fe93b4bd25f16a741")
+    version( "9.8.1", sha256="9e51983043639661a09e0a6df9fdec47b568b55d6724ae0522ee096582420fea")
+
+
+    def url_for_version(self, version):
+        urlf = "https://github.com/htcondor/htcondor/archive/refs/tags/V{0}.tar.gz"
+        return urlf.format(version.underscored)
 
     depends_on("autoconf@2.59:", type="build")
     depends_on("boost +python+thread+pic+system", type=("build", "run"))

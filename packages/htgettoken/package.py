@@ -8,7 +8,7 @@ from spack import *
 
 
 class Htgettoken(Package):
-    """FIXME: Put a proper description of your package here."""
+    """Utility to fetch webtokens from Vault"""
 
     homepage = "https://github.com/fermitools/htgettoken"
     url = "https://github.com/fermitools/htgettoken/archive/refs/tags/v1.15.tar.gz"
@@ -27,12 +27,14 @@ class Htgettoken(Package):
     depends_on("py-m2crypto", type=("build", "run"))
     depends_on("py-pyopenssl", type=("build", "run"))
     depends_on("py-kerberos", type=("build", "run"))
+    depends_on("coreutils", type="run")  # for 'base64'
 
     def install(self, spec, prefix):
         mkdir(prefix.bin)
+        mkdir(prefix.man)
+        filter_file("#!/usr/bin/python3", "#!/usr/bin/env python3", "htgettoken")
         install("htgettoken", prefix.bin)
         install("httokendecode", prefix.bin)
-        mkdir(prefix.man)
         install("htgettoken.1", prefix.man)
 
     def setup_environment(self, spack_env, run_env):

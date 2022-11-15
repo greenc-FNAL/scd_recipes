@@ -31,7 +31,7 @@ class JobsubLite(Package):
     depends_on("py-jinja2", type=("build", "run"))
     depends_on("htcondor@9.0.6:", type="run", when="+fullstack")
     depends_on("cigetcert", type="run")
-    depends_on("py-htgettoken", type="run")
+    depends_on("htgettoken", type="run")
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path, prefix)
