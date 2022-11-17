@@ -2,25 +2,19 @@ from spack import *
 
 
 class SpackInfrastructure(Package):
-    """Production Operations Management System"""
+    """Spack utility scripts, etc"""
 
-    homepage = "http://cdcvs.fnal.gov/redmine/projects/spack-infrastrucutre"
-    url = "http://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/spack-infrastructure.v1_2.tar"
+    homepage = "https://cdcvs.fnal.gov/redmine/projects/spack-infrastrucutre"
+    url = "https://github.com/FNALssi/spack-infrastructure/tags/v1.4.tar.gz"
 
     version(
         "master",
-        git="https://cdcvs.fnal.gov/projects/spack-infrastructure/",
+        git="https://github.com/FNALssi/spack-infrastructure/",
         get_full_repo=True,
     )
-    version(
-        "1_4", sha256="fd405134ea1ae96d98aaae38c5849f213d47be96ba3043e195ce46e8799e5dae"
-    )
-    version(
-        "1_3", sha256="8a00ee68d66f072987f164763545ce88e1f885e1475e2a77423133ae24e8ae16"
-    )
-    version(
-        "1_2", sha256="8bab9965072f8ef4933e166fafb9a4c6cf14cbcdc8550b314a76d23bce926aa7"
-    )
+    version( "1_4", sha256="fd405134ea1ae96d98aaae38c5849f213d47be96ba3043e195ce46e8799e5dae")
+    version( "1_3", sha256="8a00ee68d66f072987f164763545ce88e1f885e1475e2a77423133ae24e8ae16")
+    version( "1_2", sha256="8bab9965072f8ef4933e166fafb9a4c6cf14cbcdc8550b314a76d23bce926aa7")
 
     depends_on("python", type=("build", "run"))
 
