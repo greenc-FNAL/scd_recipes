@@ -5,16 +5,15 @@ class SpackInfrastructure(Package):
     """Spack utility scripts, etc"""
 
     homepage = "https://cdcvs.fnal.gov/redmine/projects/spack-infrastrucutre"
-    url = "https://github.com/FNALssi/spack-infrastructure/tags/v1.4.tar.gz"
+    url = "https://github.com/FNALssi/spack-infrastructure/archive/refs/tags/v2.19.0.tar.gz"
 
-    version(
-        "master",
-        git="https://github.com/FNALssi/spack-infrastructure/",
-        get_full_repo=True,
-    )
-    version( "1_4", sha256="fd405134ea1ae96d98aaae38c5849f213d47be96ba3043e195ce46e8799e5dae")
-    version( "1_3", sha256="8a00ee68d66f072987f164763545ce88e1f885e1475e2a77423133ae24e8ae16")
-    version( "1_2", sha256="8bab9965072f8ef4933e166fafb9a4c6cf14cbcdc8550b314a76d23bce926aa7")
+    version("2.19.0", sha256="274aafb4ffad82205c8972c6aa85c04e5fdc86ce856c7701105b3b7a13159763")
+    version("2_18_00_01", sha256="52d60684a359060ef95c91b9fb4adf0d114b28437144dc496118ccf39af89fd0")
+    version("master", git="https://github.com/FNALssi/spack-infrastructure/")
+
+    def url_for_version(self, version):
+        fmt="https://github.com/FNALssi/spack-infrastructure/archive/refs/tags/v{0}.tar.gz"
+        return fmt.format(version)
 
     depends_on("python", type=("build", "run"))
 
