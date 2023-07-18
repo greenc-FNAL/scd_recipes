@@ -5,7 +5,7 @@
 
 from spack.package import *
 
-class Datadispatcher(PythonPackage):
+class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
 
     homepage = "https://github.com/ivmfnal/data_dispatcher"
