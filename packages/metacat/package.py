@@ -10,6 +10,7 @@ class Metacat(PythonPackage):
 
     homepage = "https://metacat.readthedocs.io/en/latest/index.html"
     pypi = "metacat/metacat-3.20.0.tar.gz"
+    git = "https://github.com/ivmfnal/metacat.git"
 
     maintainers = ["marcmengel", "ivmfnal"]
 
@@ -23,6 +24,8 @@ class Metacat(PythonPackage):
     version("3.20.0", sha256="4f981b755bb914c503db9480b4dab19093a3f5680622c5d9b1913deb17b7ed12")
     version("3.19.1", sha256="c7473233a80926905ec310dfb78a5d61cb52fec9e3f2e154fed577a020573512")
     version("3.19.0", sha256="6366f1379eb9946e7ff29d972b3abb253a59f7e183f43fb598e1ae6ded6b1424")
+
+    version("main", branch="main")
 
     depends_on("python@3.7:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
