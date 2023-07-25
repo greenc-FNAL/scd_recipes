@@ -29,7 +29,7 @@ class Poms(PythonPackage):
 
     depends_on("python", type=("build", "run"))
     depends_on("py-cherrypy", type=("build", "run"))
-    depends_on("py-futures", type=("build", "run"), when="^python@:3.1")
+    depends_on("py-future", type=("build", "run"), when="^python@:3.1")
     depends_on("py-jinja2", type=("build", "run"))
     depends_on("py-more-itertools", type=("build", "run"))
     depends_on("py-prometheus-client", type=("build", "run"))
@@ -38,6 +38,7 @@ class Poms(PythonPackage):
     depends_on("py-requests", type=("build", "run"))
     depends_on("py-setuptools", type=("build", "run"))
     depends_on("py-sqlalchemy", type=("build", "run"))
+    depends_on("data-dispatcher", type=("build", "run"))
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path, prefix)
