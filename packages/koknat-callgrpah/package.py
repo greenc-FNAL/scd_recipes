@@ -23,7 +23,7 @@
 from spack.package import *
 
 
-class KCallgraph(Package):
+class KoknatCallgraph(Package):
     """Generate static call graphs for multiple languages"""
 
     homepage = "https://github.com/koknat/callGraph"
