@@ -27,7 +27,6 @@ class Rucio(PythonPackage):
     depends_on("py-dogpile.cache", type=("build","run"))
     depends_on("py-tabulate", type=("build","run"))
     depends_on("py-jsonschema", type=("build","run"))
-    depends_on("py-dataclasses", type=("build","run"))
     depends_on("py-paramiko", type=("build","run"))
     depends_on("py-kerberos", type=("build","run"))
     depends_on("py-requests-kerberos", type=("build","run"))
