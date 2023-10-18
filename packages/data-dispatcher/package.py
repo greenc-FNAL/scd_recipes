@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack.package import *
+import os
 
 class DataDispatcher(PythonPackage):
     """Data Dispatcher for processing large filesets"""
@@ -30,3 +31,9 @@ class DataDispatcher(PythonPackage):
     depends_on("py-setuptools", type="build")
     depends_on("py-requests", type=("build", "run"))
     depends_on("metacat@3.9.3:", type=("build", "run"))
+
+    @run_after("install")
+    def remove_extra_name(self):
+        # data-dispatcher installs identicaly "ddint" and "dd", but the
+        # latter obscures /bin/dd and breaks ifdhc...
+        os.unlink(self.spec.prefix.bin.dd)

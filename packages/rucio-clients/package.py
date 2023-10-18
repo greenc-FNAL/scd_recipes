@@ -17,8 +17,10 @@ class RucioClients(PythonPackage):
 
     version("32.4.0", sha256="847f8db44f6f7f2c53cfb596afcefefd310c5791d5fbee86bc487d904c130801") 
 
-    depends_on("python", type=("build", "run"))
+    depends_on("py-setuptools", type=("build"))
     depends_on("py-pip", type="build")
+
+    depends_on("python", type=("build", "run"))
     depends_on("py-requests", type=("build","run"))
     depends_on("py-urllib3", type=("build","run"))
     depends_on("py-dogpile-cache", type=("build","run"))

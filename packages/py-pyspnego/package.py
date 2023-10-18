@@ -19,3 +19,4 @@ class PyPyspnego(PythonPackage):
     version("0.6.3", sha256="6060a0e683171090adcf92c9d319ddd334f15117fa199a703d8c9bd094d9f6c0")
 
     depends_on("py-cryptography")
+    depends_on("py-setuptools")
