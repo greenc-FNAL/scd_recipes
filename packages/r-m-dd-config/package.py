@@ -13,7 +13,7 @@ class RMDdConfig(BundlePackage):
 
     homepage = "https://fifewiki.fnal.gov/"
 
-    maintainers("marcmengel")
+    maintainers = ["marcmengel"]
 
     version("1.0")
 
