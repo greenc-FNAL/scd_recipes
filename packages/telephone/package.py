@@ -5,17 +5,19 @@
 
 from spack.package import *
 
+
 def ignore_CVS(path):
-    if (str(path).find("CVS") >= 0):
+    if str(path).find("CVS") >= 0:
         return True
     return False
+
 
 class Telephone(Package):
     """FIXME: Put a proper description of your package here."""
 
     homepage = "https://www.www-tele.fnal.gov"
     cvs = ":pserver:anonymous@cdcvs.fnal.gov:/cvs/cd_read_only%module=telephone"
-    maintainers = [ "marcmengel" ]
+    maintainers = ["marcmengel"]
 
     version("v5_4")
     version("v5_3")
@@ -29,11 +31,10 @@ class Telephone(Package):
 
     def patch(self):
         filter_file(
-            'man2html',
-            'ansi2html',
-            'html/Makefile',
+            "man2html",
+            "ansi2html",
+            "html/Makefile",
         )
-
 
     def install(self, spec, prefix):
         make = which("make")
