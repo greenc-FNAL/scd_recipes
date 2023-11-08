@@ -3,23 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install telephone
-#
-# You can edit this file again by typing:
-#
-#     spack edit telephone
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack.package import *
 
 def ignore_CVS(path):
@@ -30,15 +13,18 @@ def ignore_CVS(path):
 class Telephone(Package):
     """FIXME: Put a proper description of your package here."""
 
-    homepage = "https://www.example.com"
+    homepage = "https://www.www-tele.fnal.gov"
     cvs = ":pserver:anonymous@cdcvs.fnal.gov:/cvs/cd_read_only%module=telephone"
+    maintainers = [ "marcmengel" ]
 
     version("v5_4")
     version("v5_3")
     version("v5_2")
 
     depends_on("perl-libwww-perl")
+    # using ansi2html instead of old man2html...
     depends_on("py-ansi2html", type="build")
+    # ansi2html uses code from setuptools?!..
     depends_on("py-setuptools", type="build")
 
     def patch(self):
