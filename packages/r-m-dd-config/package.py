@@ -81,7 +81,10 @@ class RMDdConfig(BundlePackage):
         msurl = "https://metacat.%(lab)s:9443/%(exp)s%(msuf)s" % rdict
         authurl = "https://metacat.%(lab)s:8143/auth/%(exp)s%(asuf)s" % rdict
         if rdict["exp"] == "mu2e":
-            msurl = msurl.replace("metacat", "dbweb5")
+            msurl = ( msurl
+                        .replace("https://metacat", "http://dbweb5")
+                        .replace(":9443",":9094")
+                    )
 
         configbase=os.environ.get(
              "XDG_CONFIG_HOME", 
