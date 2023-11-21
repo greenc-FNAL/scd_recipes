@@ -62,8 +62,8 @@ class RMDdConfig(BundlePackage):
             rdict["asuf"] = "_dev"
             rdict["acct"] =  os.environ.get("GRID_USER", os.environ.get("USER","unk")),
         if rdict["exp"] == "dune":
-            rdict["msuf"] = "_meta_demo/app"
-            rdict["dsuf"] = "/dd/app"
+            rdict["msuf"] = "_meta_prod/app"
+            rdict["dsuf"] = "/dd/data"
         
         return rdict
 

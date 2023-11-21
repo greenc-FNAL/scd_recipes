@@ -5,7 +5,7 @@ import os
 class Encp(Package):
     pass
 
-    version('3.11c', sha256='c2ee0b1d62f62b2806f558a46f6584749d1533fbd3e29c3596a24f375ca14da3')
+    version("3.11c", sha256="c7614efe8c2279f02ee22d268f8a49213e0b2d12080d076d99785b753e19139d")
 
 
     variant("ups_to_spack", default=False)

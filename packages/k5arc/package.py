@@ -23,12 +23,12 @@ class K5arc(Package):
     version("v1_1")
 
     def setup_build_environment(self, env):
-        env.set("K5ARC_DIR", self.spec.prefix)
+        env.set("K5ARC_DIR", self.stage.source_path)
 
     def setup_run_environment(self, env):
         env.set("K5ARC_DIR", self.spec.prefix)
 
     def install(self, spec, prefix):
-        sh = which("sh")
-        sh("ups/init")
+        #sh = which("sh")
+        #sh("ups/init")
         install_tree(self.stage.source_path, prefix, ignore=ignore_CVS)
