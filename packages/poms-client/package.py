@@ -25,5 +25,6 @@ class PomsClient(Package):
         install_tree(self.stage.source_path+"/poms_client", prefix)
 
     def setup_environment(self, spack_env, run_env):
+        run_env.set("POMS_CLIENT_DIR", self.prefix)
         run_env.prepend_path("PATH", self.prefix.bin)
         run_env.prepend_path("PYTHONPATH", self.prefix + "/python")
