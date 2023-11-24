@@ -20,6 +20,7 @@ class PomsJobsubWrapper(Package):
 
     depends_on("python", type=("build", "run"))
     depends_on("py-requests", type="run")
+    depends_on("poms-client", type="run")
 
     def install(self, spec, prefix):
         install_tree(self.stage.source_path+"/poms_jobsub_wrapper", prefix)
