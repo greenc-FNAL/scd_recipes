@@ -19,7 +19,7 @@ class PyScitokens(PythonPackage):
 
     version("1.8.1", sha256="f255383d9c7402b3fcd20d5ed26a6b407b4be8bec6f282d0af29b6275382b54d")
 
-    depends_on("py-pip", type="build")
+    depends_on("py-setuptools", type="build")
     depends_on("py-cryptography")
     depends_on("py-pyjwt")
 
