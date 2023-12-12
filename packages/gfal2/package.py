@@ -13,7 +13,7 @@ class Gfal2(CMakePackage):
     homepage = "https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html"
     url = "https://gitlab.cern.ch/dmc/gfal2/-/archive/v2.12.0/gfal2-v2.12.0.tar.gz"
 
-    maintainers = ["marc.mengel@gmail.com", "github_user2"]
+    maintainers("marc.mengel@gmail.com", "github_user2")
 
     version(
         "2.19.0",

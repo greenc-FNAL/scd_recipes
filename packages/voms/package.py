@@ -22,7 +22,7 @@ class Voms(AutotoolsPackage):
     homepage = "https://italiangrid.github.io/voms/"
     url = "https://github.com/italiangrid/voms/archive/refs/tags/v2.0.16.tar.gz"
 
-    maintainers = ["marcmengel"]
+    maintainers("marcmengel")
 
     version(
         "2.0.16",

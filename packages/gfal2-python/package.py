@@ -13,9 +13,7 @@ class Gfal2Python(CMakePackage):
     homepage = "https://gitlab.cern.ch/dmc"
     url = "https://gitlab.cern.ch/dmc/gfal2-bindings/-/archive/v1.8.3/gfal2-bindings-v1.8.3.tar.gz"
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
 
     version(
         "1.10.0",

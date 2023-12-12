@@ -13,7 +13,7 @@ class PyPythreader(PythonPackage):
     homepage = "https://github.com/imandr/pythreader"
     pypi = "pythreader/pythreader-2.8.4.tar.gz"
 
-    maintainers = ["marcmengel","imandr"]
+    maintainers("marcmengel","imandr")
 
     version("2.8.4", sha256="10dc326931443877e55cfa712a9532f504bd3126bb8863d51b68b900b210b317")
     version("2.8.2", sha256="2396de70d20518f1a64f75516a6d429989787823cc735ef401da8394f4b20c36")

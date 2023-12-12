@@ -25,9 +25,8 @@ class Gsoap(AutotoolsPackage):
         os.system("curl --output /dev/null --silent --max-redirs 0 '%s'" % fetch_first)
         return "https://downloads.sourceforge.net/project/gsoap2/gsoap_%s.zip" % version
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
+
     version("2.8.131", sha256="e5e1a4ea25fea56ebd62d7b94a089c29e9394b6394ad362762297b7cb31622df")
     version("2.8.126", sha256="b65190ebf8c2517d6fafbdc2000bc7bc650d921a02f4aa53eb1e3df267592c4a")
     version("2.8.123", sha256="e018500ac942bb7627612cc9a8229610efe293a450359c413da1a006eb7c193d")

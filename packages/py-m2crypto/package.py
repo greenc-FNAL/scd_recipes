@@ -12,9 +12,7 @@ class PyM2crypto(PythonPackage):
     homepage = "https://gitlab.com/m2crypto/m2crypto"
     pypi = "M2Crypto/M2Crypto-0.38.0.tar.gz"
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
 
     version(
         "0.38.0",

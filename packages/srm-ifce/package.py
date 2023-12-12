@@ -29,9 +29,7 @@ class SrmIfce(CMakePackage):
     homepage = "https://dmc-docs.web.cern.ch/dmc-docs/srm-ifce.html"
     url = "https://github.com/cern-fts/srm-ifce/archive/v1.24.4.tar.gz"
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
 
     version(
         "1.24.4",

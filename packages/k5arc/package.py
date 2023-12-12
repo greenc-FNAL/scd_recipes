@@ -17,7 +17,7 @@ class K5arc(Package):
 
     homepage = "https://fifewiki.fnal.gov/"
     cvs = ":pserver:anonymous@cdcvs.fnal.gov:/cvs/oss%module=k5arc"
-    maintainers = ["marcmengel"]
+    maintainers("marcmengel")
 
     version("v1_2")
     version("v1_1")

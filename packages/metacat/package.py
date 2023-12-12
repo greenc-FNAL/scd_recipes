@@ -12,7 +12,7 @@ class Metacat(PythonPackage):
     pypi = "metacat/metacat-3.20.0.tar.gz"
     git = "https://github.com/ivmfnal/metacat.git"
 
-    maintainers = ["marcmengel", "ivmfnal"]
+    maintainers("marcmengel", "ivmfnal")
 
     version("3.42.1", sha256="af26f91dae527ae102e9229357a392ffad6b790768b8575ba7fcb3fe5285f4b7")
     version("3.38.0", sha256="2d3a5313590db47a98cea25f68947325203fb4b466751f2c2c841172027e666a")

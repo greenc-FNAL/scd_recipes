@@ -29,7 +29,7 @@ class PyPythonCrontab(PythonPackage):
     homepage = "https://gitlab.com/doctormo/python-crontab/"
     url = "https://pypi.io/packages/source/p/python-crontab/python-crontab-2.5.1.tar.gz"
 
-    maintainers = ["marc.mengel@gmail.com"]
+    maintainers("marc.mengel@gmail.com")
 
     version(
         "2.5.1",

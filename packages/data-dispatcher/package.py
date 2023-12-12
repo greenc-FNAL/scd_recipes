@@ -13,7 +13,7 @@ class DataDispatcher(PythonPackage):
     pypi = "datadispatcher/datadispatcher-1.15.2.tar.gz"
     git = "https://github.com/ivmfnal/data_dispatcher.git"
 
-    maintainers = ["marcmengel", "ivmfnal"]
+    maintainers("marcmengel", "ivmfnal")
 
     version("1.26.0", sha256="c4492b7b2f20761c8f4e4e8f746088b75ff953f49ec3c179bab42064778d2edf")
     version("1.25.0", sha256="2cc09dbc3922dd0a4c8af1e7d05084f6dfea29594bfc4b39b43c91e7df256adf")

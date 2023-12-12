@@ -14,9 +14,7 @@ class GlobusToolkit(AutotoolsPackage):
     homepage = "https://www.globus.org/toolkit/"
     url = "https://github.com/globus/globus-toolkit/archive/globus_5_2_4.tar.gz"
 
-    maintainers = [
-        "marc.mengel@gmail.com",
-    ]
+    maintainers("marcmengel")
 
     version(
         "6_0", sha256="8091b293d5a08a35128334cb4f17f3da5f83457639415b31c523bb511474be87"

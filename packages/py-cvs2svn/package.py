@@ -35,9 +35,7 @@ class PyCvs2svn(PythonPackage):
         sha256="29ac8a3ab60d0eab231529297d9a83ac2fc7bed1cf152b720185f233a59b7d3d",
     )
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
 
     depends_on("python@:3.0.0")
     # depends_on('py-setuptools', type='build')

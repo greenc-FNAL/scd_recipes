@@ -15,7 +15,7 @@ class Htcondor(CMakePackage):
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
-    maintainers = [ "marcmengel" ]
+    maintainers( "marcmengel" )
 
     version( "main", git="https://github.com/marcmengel/htcondor.git", branch="main")
     version( "9.0.16", sha256="c505c3e72c8dd7d6b30f7f7922ccdd20627b6dcf385b40b17c3022973d2852eb", preferred=True)

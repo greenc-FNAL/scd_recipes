@@ -17,7 +17,7 @@ class Telephone(Package):
 
     homepage = "https://www.www-tele.fnal.gov"
     cvs = ":pserver:anonymous@cdcvs.fnal.gov:/cvs/cd_read_only%module=telephone"
-    maintainers = ["marcmengel"]
+    maintainers("marcmengel")
 
     version("v5_4")
     version("v5_3")

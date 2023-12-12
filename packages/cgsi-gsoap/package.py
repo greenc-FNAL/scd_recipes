@@ -29,9 +29,7 @@ class CgsiGsoap(CMakePackage):
     homepage = "http://dmc.web.cern.ch/"
     url = "https://gitlab.cern.ch/dmc/cgsi-gsoap/-/archive/v1.3.11/cgsi-gsoap-v1.3.11.tar.gz"
 
-    maintainers = [
-        "marc.mengel@gmail.com",
-    ]
+    maintainers("marcmengel")
 
     version(
         "1.3.11",

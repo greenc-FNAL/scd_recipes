@@ -13,7 +13,7 @@ class RucioClients(PythonPackage):
     homepage = "https://rucio.cern.ch"
     pypi = "rucio-clients/rucio-clients-1.30.0.tar.gz"
 
-    # maintainers = ["marcmengel","bari12"]
+    # maintainers("marcmengel","bari12")
 
     version("32.4.0", sha256="847f8db44f6f7f2c53cfb596afcefefd310c5791d5fbee86bc487d904c130801") 
     version("1.29.12", sha256="4b3e11726e75f89a04b513be16a53e5b9f7d33023ae8f0b7aa9032a2a1b8ae75", preferred=True)

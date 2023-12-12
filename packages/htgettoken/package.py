@@ -13,7 +13,7 @@ class Htgettoken(Package):
     homepage = "https://github.com/fermitools/htgettoken"
     url = "https://github.com/fermitools/htgettoken/archive/refs/tags/v1.15.tar.gz"
 
-    maintainers = ["marcmengel", "DrDaveD"]
+    maintainers("marcmengel", "DrDaveD")
 
     version(
         "1.15",

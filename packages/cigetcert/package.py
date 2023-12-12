@@ -17,7 +17,7 @@ class Cigetcert(PythonPackage):
     homepage = "https://github.com/fermigtools/cigetcert"
     url = "https://github.com/fermitools/cigetcert/archive/refs/tags/1.20.tar.gz"
 
-    maintainers = ["marcmengel", "DrDaveD"]
+    maintainers("marcmengel", "DrDaveD")
 
     version(
         "1.20",

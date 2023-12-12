@@ -29,9 +29,7 @@ class PyGfal2Util(PythonPackage):
     homepage = "https://gitlab.cern.ch/dmc/"
     url = "https://gitlab.cern.ch/dmc/gfal2-util/-/archive/v1.3.0/gfal2-util-v1.3.0.tar.bz2"
 
-    maintainers = [
-        "marcmengel",
-    ]
+    maintainers("marcmengel")
 
     version(
         "1.6.0-rc1",
